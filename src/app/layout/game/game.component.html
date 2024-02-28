@@ -1,0 +1,22 @@
+   
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card">
+            <div class="text-center p-3">
+                <h4>The Player is : {{currentPlayer}}</h4>
+            </div>
+            <div class="card-container">
+                <div class="row p-2" *ngFor="let row of [1, 2, 3]; let rowindex = index">
+                    <div class="col-4" *ngFor="let col of [1, 2, 3]; let colindex = index">
+                        <div class="boxes d-flex justify-content-center align-items-center" (click)="boxClick(rowindex, colindex)">
+                            <span class="letter">{{board[rowindex][colindex]}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="gameOver" class="d-flex justify-content-center gap-3 p-3">
+                <h4>The Winner is : <b>{{winner}}</b></h4>
+                <button class="btn btn-outline-secondary" (click)="Reset()">Reset</button>
+            </div>
+        </div>
+       
+    </div>
